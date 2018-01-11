@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "ZCYPageView"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "自定义PageView."
   s.homepage     = "https://github.com/ZhongChunYa/ZCYPageView"
   s.license      = "MIT"
