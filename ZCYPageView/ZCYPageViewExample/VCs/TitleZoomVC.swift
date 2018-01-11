@@ -20,7 +20,7 @@ class TitleZoomVC: UIViewController {
         let conf = ZCYPageTitleConfig()
         conf.titleZoomSwitch = true
         
-        var rect = CGRect(x: 0, y: 100, width: UIScreen.main.bounds.size.width, height: 60)
+        var rect = CGRect(x: 0, y: 64, width: UIScreen.main.bounds.size.width, height: 60)
         let titleArr = ["哈哈哈", "哈哈哈", "哈哈哈", "哈哈哈哈", "哈哈哈哈", "哈哈哈", "哈哈哈", "哈哈哈", "哈哈哈哈", "哈哈哈哈"]
         
         mPageTitleView = ZCYPageTitleView(frame: rect, titleArr: titleArr, config: conf, delegate: self)
@@ -48,7 +48,7 @@ class TitleZoomVC: UIViewController {
         let vc10 = UIViewController()
         vc10.view.backgroundColor = UIColor.orange
         
-        rect = CGRect(x: 0, y: 200, width: UIScreen.main.bounds.size.width, height: 400)
+        rect = CGRect(x: 0, y: 124, width: UIScreen.main.bounds.size.width, height: 400)
         let arr = [vc1, vc2, vc3, vc4, vc5, vc6, vc7, vc8, vc9, vc10]
         mPageContentView = ZCYPageContentView(frame: rect, parentVC: self, childVCs: arr, delegate: self)
         self.view.addSubview(mPageContentView)

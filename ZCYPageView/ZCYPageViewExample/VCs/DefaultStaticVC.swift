@@ -32,7 +32,7 @@ class DefaultStaticVC: UIViewController {
         let vc3 = UIViewController()
         vc3.view.backgroundColor = UIColor.red
         
-        rect = CGRect(x: 0, y: 200, width: UIScreen.main.bounds.size.width, height: 400)
+        rect = CGRect(x: 0, y: 124, width: UIScreen.main.bounds.size.width, height: 400)
         let arr = [vc1, vc2, vc3]
         mPageContentView = ZCYPageContentView(frame: rect, parentVC: self, childVCs: arr, delegate: self)
         self.view.addSubview(mPageContentView)
