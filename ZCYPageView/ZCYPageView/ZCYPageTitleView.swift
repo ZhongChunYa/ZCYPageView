@@ -8,12 +8,12 @@
 
 import UIKit
 
-protocol ZCYPageTitleViewDelegate: NSObjectProtocol {
+public protocol ZCYPageTitleViewDelegate: NSObjectProtocol {
     // 点击title按钮调用代理，滚动contentView
     func selectPageTitleView(_ pageTitleView: ZCYPageTitleView, withIndex index: Int)
 }
 
-class ZCYPageTitleView: UIView {
+public class ZCYPageTitleView: UIView {
     
     // 当前选中title下标
     private var mSelectedIndex: Int
@@ -40,7 +40,7 @@ class ZCYPageTitleView: UIView {
     private var mStartColor: (r: CGFloat, g: CGFloat, b: CGFloat)!
     private var mEndColor: (r: CGFloat, g: CGFloat, b: CGFloat)!
     
-    init(frame: CGRect, titleArr: [String], config: ZCYPageTitleConfig, delegate: ZCYPageTitleViewDelegate, selectedIndex: Int = 0) {
+    public init(frame: CGRect, titleArr: [String], config: ZCYPageTitleConfig, delegate: ZCYPageTitleViewDelegate, selectedIndex: Int = 0) {
         mTitleArr = titleArr
         mTitleConfig = config
         mTitleViewDelegate = delegate
@@ -55,7 +55,7 @@ class ZCYPageTitleView: UIView {
         initTitleView()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -344,8 +344,8 @@ class ZCYPageTitleView: UIView {
 }
 
 // MARK: - Public
-extension ZCYPageTitleView {
-    func setPageTitleViewWithProgress(_ progress: CGFloat, originalIndex: Int, targetIndex: Int) {
+public extension ZCYPageTitleView {
+    public func setPageTitleViewWithProgress(_ progress: CGFloat, originalIndex: Int, targetIndex: Int) {
         let originalBtn = mBtnArr[originalIndex]
         let targetBtn = mBtnArr[targetIndex]
         
@@ -369,7 +369,7 @@ extension ZCYPageTitleView {
         }
     }
     
-    func resetPageTitleViewTitle(_ title: String, ofIndex index: Int) {
+    public func resetPageTitleViewTitle(_ title: String, ofIndex index: Int) {
         if index < mTitleArr.count {
             let btn = mBtnArr[index]
             btn.setTitle(title, for: .normal)

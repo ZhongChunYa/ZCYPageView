@@ -9,7 +9,7 @@
 import UIKit
 
 // TitleView的样式
-enum ZCYTitleViewStyle {
+public enum ZCYTitleViewStyle {
     case ZCYTitleViewStyleDefault       // 默认样式，无下划线，无边框，无覆盖
     case ZCYTitleViewStyleCover         // 覆盖样式
     case ZCYTitleViewStyleBorder        // 边框样式
@@ -17,19 +17,19 @@ enum ZCYTitleViewStyle {
 }
 
 // ContentView滚动时TitleView的样式（仅在Cover,Frame,UnderLine时有效）
-enum ZCYTitleViewScrollStyle {
+public enum ZCYTitleViewScrollStyle {
     case ZCYTitleViewScrollStyleDefault     // 默认样式，跟随内容滚动
     case ZCYTitleViewScrollStyleHalf        // 滑动到一半改变位置
     case ZCYTitleViewScrollStyleEnded       // 滑动结束改变位置
 }
 
 // 指示器样式，仅在ZCYTitleViewStyleUnderLine样式时有效
-enum ZCYIndicatorStyle {
+public enum ZCYIndicatorStyle {
     case ZCYIndicatorDefault        // 默认样式，与title等长
     case ZCYIndicatorFixed          // 固定长度，水平中心与title中心相等
 }
 
-class ZCYPageTitleConfig: NSObject {
+public class ZCYPageTitleConfig: NSObject {
     
     var isNeedBounces: Bool = true
     var isNeedBottomSeparator: Bool = false

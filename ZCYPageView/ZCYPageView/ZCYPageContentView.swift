@@ -8,14 +8,14 @@
 
 import UIKit
 
-@objc protocol ZCYPageContentViewDelegate: NSObjectProtocol {
+@objc public  protocol ZCYPageContentViewDelegate: NSObjectProtocol {
     // 滚动contentView时改变titleView状态
     func scrollPageContentView(_ pageContentView: ZCYPageContentView, progress: CGFloat, originalIndex: Int, targetIndex: Int)
     // 获取contentView和offet，可不实现
     @objc optional func getPageContentView(_ pageContentView: ZCYPageContentView, offsetX: CGFloat)
 }
 
-class ZCYPageContentView: UIView {
+public class ZCYPageContentView: UIView {
     
     // 判断contentView是否可以滚动
     var mScrollSwitch: Bool
@@ -32,7 +32,7 @@ class ZCYPageContentView: UIView {
     // 判断是否点击title来滚动页面
     private var mIsClickTitle: Bool = false
     
-    init(frame: CGRect, parentVC: UIViewController, childVCs: [UIViewController], delegate: ZCYPageContentViewDelegate?, scrollSwitch: Bool = true) {
+    public init(frame: CGRect, parentVC: UIViewController, childVCs: [UIViewController], delegate: ZCYPageContentViewDelegate?, scrollSwitch: Bool = true) {
         mScrollSwitch = scrollSwitch
         if delegate == nil && scrollSwitch == true {
             mScrollSwitch = false
@@ -46,7 +46,7 @@ class ZCYPageContentView: UIView {
         initContent()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -78,8 +78,8 @@ class ZCYPageContentView: UIView {
 }
 
 // MARK: - Public
-extension ZCYPageContentView {
-    func setPageContentViewWithIndex(_ index: Int) {
+public extension ZCYPageContentView {
+    public func setPageContentViewWithIndex(_ index: Int) {
         mIsClickTitle = true
         weak var weakSelf = self
         let offset = CGFloat(index) * mScrollView.frame.size.width
@@ -97,18 +97,18 @@ extension ZCYPageContentView {
 
 // MARK: - UIScrollView Delagate
 extension ZCYPageContentView: UIScrollViewDelegate {
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+    public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         mIsClickTitle = false
         mCurrentOffsetX = scrollView.contentOffset.x
     }
     
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         if mContentViewDelegate!.responds(to: #selector(ZCYPageContentViewDelegate.getPageContentView(_:offsetX:))) {
             mContentViewDelegate!.getPageContentView!(self, offsetX: scrollView.contentOffset.x)
         }
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if mIsClickTitle {
             return
         }
