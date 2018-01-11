@@ -31,47 +31,47 @@ public enum ZCYIndicatorStyle {
 
 public class ZCYPageTitleConfig: NSObject {
     
-    var isNeedBounces: Bool = true
-    var isNeedBottomSeparator: Bool = false
+    public var isNeedBounces: Bool = true
+    public var isNeedBottomSeparator: Bool = false
     
     // 颜色渐变
-    var titleGradientSwitch: Bool = false
+    public var titleGradientSwitch: Bool = false
     // 缩放渐变
-    var titleZoomSwitch: Bool = false
+    public var titleZoomSwitch: Bool = false
     
     // title间距
-    var titleSpacing: CGFloat = 20.0
+    public var titleSpacing: CGFloat = 20.0
     // titleView大小
-    var titleViewSize: CGSize = CGSize(width: UIScreen.main.bounds.width, height: 60)
+    public var titleViewSize: CGSize = CGSize(width: UIScreen.main.bounds.width, height: 60)
     
     // title颜色的设置需要使用RGB值来设置，在颜色渐变时才有效
     // title默认颜色
-    var titleColor: UIColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+    public var titleColor: UIColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
     // title选中颜色
-    var titleSelectedColor: UIColor = UIColor(red: 1, green: 0, blue: 0, alpha: 1)
+    public var titleSelectedColor: UIColor = UIColor(red: 1, green: 0, blue: 0, alpha: 1)
     // title字体大小
-    var titleFont: UIFont = UIFont.systemFont(ofSize: 15)
+    public var titleFont: UIFont = UIFont.systemFont(ofSize: 15)
     
-    var titleViewStyle: ZCYTitleViewStyle = .ZCYTitleViewStyleDefault
-    var titleViewScrollStyle: ZCYTitleViewScrollStyle = .ZCYTitleViewScrollStyleDefault
+    public var titleViewStyle: ZCYTitleViewStyle = .ZCYTitleViewStyleDefault
+    public var titleViewScrollStyle: ZCYTitleViewScrollStyle = .ZCYTitleViewScrollStyleDefault
     
     // 指示器样式
-    var indicatorStyle: ZCYIndicatorStyle = .ZCYIndicatorDefault
+    public var indicatorStyle: ZCYIndicatorStyle = .ZCYIndicatorDefault
     // 指示器长度，fixed样式下需要设置
-    var indictorWidth: CGFloat = 0
+    public var indictorWidth: CGFloat = 0
     
     // 下划线高度
-    var underlineHeight: CGFloat = 2.0
+    public var underlineHeight: CGFloat = 2.0
     // 下划线颜色
-    var underlineColor: UIColor = UIColor.red
+    public var underlineColor: UIColor = UIColor.red
     
     // 覆盖颜色
-    var coverColor: UIColor = UIColor.clear
+    public var coverColor: UIColor = UIColor.clear
     
     // 边框宽度
-    var borderWidth: CGFloat = 0.0
+    public var borderWidth: CGFloat = 0.0
     // 边框颜色
-    var borderColor: UIColor = UIColor.clear
+    public var borderColor: UIColor = UIColor.clear
     // 边框圆角
-    var borderCornerRadius: CGFloat = 0.0
+    public var borderCornerRadius: CGFloat = 0.0
 }
